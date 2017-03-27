@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * pppppp
@@ -12,11 +14,33 @@ public class Main {
 //        System.out.println(search_3(getList(), key));
 //
 //        System.out.println(binarySearch(getSortedList(), key));
-        System.out.println(lower_bound(getSortedList(), key));
-        System.out.println(upper_bound(getSortedList(), key));
+//        System.out.println(lower_bound(getSortedList(), key));
+//        System.out.println(upper_bound(getSortedList(), key));
+        int[] arr = {1, 3, 5, 3, 8, 2, 3, 0, 5};
+        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
+//        System.out.println(minElement(getList()));
     }
 
-//    1 2 2 2 2 3 3 3 4 5
+    private static void bubbleSort(int[] arr) {
+        boolean changeFlag;
+        do {
+            changeFlag = false;
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i - 1] > arr[i]) {
+                    int buff = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[i] = buff;
+                    changeFlag = true;
+                }
+            }
+        } while (changeFlag);
+    }
+
+    private static int minElement(List<Integer> list) {
+
+        return 0;
+    }
 
     private static int upper_bound(List<Integer> list, int key){
         int begin = 0;
